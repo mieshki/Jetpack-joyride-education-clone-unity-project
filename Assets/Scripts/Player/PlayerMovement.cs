@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 
-    [Header("MUST SET")]
+    [Header("MUST BE SET")]
     public Rigidbody2D playerRB;
 
 
     [Header("Player/physics settings")]
-    public float forceMultiplier = 10000f;
+    public float forceMultiplier = 12000f;
 
 
     void MoveUp()

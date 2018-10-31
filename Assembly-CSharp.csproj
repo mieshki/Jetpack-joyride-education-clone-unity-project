@@ -62,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GamePhysics\PhysicsManager.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\ObstacleMovement.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\ObstacleSpawner.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCollisions.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Unity/JetpackJoyrideEducationClone/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
