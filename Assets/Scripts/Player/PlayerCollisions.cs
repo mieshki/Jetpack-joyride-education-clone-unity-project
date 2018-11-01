@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour {
 
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
@@ -17,6 +19,11 @@ public class PlayerCollisions : MonoBehaviour {
         if (collision.tag == "Obstacle")
         {
             Debug.Log("rip");
+            Destroy(collision.gameObject);
+        }
+        else if (collision.tag == "Coin")
+        {
+            Debug.Log("score++");
             Destroy(collision.gameObject);
         }
         else Debug.Log(collision.tag);

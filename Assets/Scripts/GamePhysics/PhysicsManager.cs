@@ -7,11 +7,13 @@ public class PhysicsManager : MonoBehaviour {
     [Header("Physics settings")]
     public Vector2 gravityVector = new Vector2(0f, -20f);
 
-	void Start () {
+	void Start ()
+    {
         Physics2D.gravity = gravityVector;
 	}
 	
-	void Update () {
+	void Update ()
+    {
 		
 	}
 }

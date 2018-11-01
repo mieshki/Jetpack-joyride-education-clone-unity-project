@@ -7,10 +7,11 @@ public class ObstacleSpawner : MonoBehaviour {
     public GameObject obstaclesSpawnPointsParent;
     public GameObject obstaclePrefab;
 
-    
+
     [Header("Obstacles spawner settings")]
+    public float startSpawningFor = 1f;
     public float timeBetweenSpawn = 1f;
-    public float speedOfSpawning = 2f;
+    public float speedOfSpawning = .5f;
     public float minObstacleLength = 2f;
     public float maxObstacleLength = 5f;
     public float minObstacleRotation = -20f;
@@ -21,7 +22,7 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void Start ()
     {
-        currentTime = timeBetweenSpawn;
+        currentTime = startSpawningFor;
         allSpawnPoints = obstaclesSpawnPointsParent.GetComponentsInChildren<Transform>();	
 	}
 	
@@ -30,7 +31,7 @@ public class ObstacleSpawner : MonoBehaviour {
     {
         if (currentTime <= 0)
         {
-            Debug.Log("spawn");
+            //Debug.Log("spawn");
             SpawnObstacle();
             currentTime = timeBetweenSpawn;
         }
