@@ -27,7 +27,7 @@ public class CoinSpawner : MonoBehaviour {
         if (currentTime <= 0)
         {
             //Debug.Log("spawn");
-            SpawnObstacle();
+            SpawnCoin();
             currentTime = timeBetweenSpawn;
         }
         else
@@ -36,7 +36,7 @@ public class CoinSpawner : MonoBehaviour {
         }
     }
 
-    void SpawnObstacle()
+    void SpawnCoin()
     {
         int randomSpawnPoint = Random.Range(0, allSpawnPoints.Length);
 
