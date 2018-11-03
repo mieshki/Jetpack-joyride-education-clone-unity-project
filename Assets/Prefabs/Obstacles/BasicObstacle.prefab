@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleTransform: {fileID: 4213483634487842}
-  speed: 6
 --- !u!212 &212728142030380268
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -135,7 +134,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5bbf3aeb71789ea4e9b6b1eef2b3d969, type: 3}
   m_Color: {r: 0.764151, g: 0.075694196, b: 0.075694196, a: 1}
   m_FlipX: 0
