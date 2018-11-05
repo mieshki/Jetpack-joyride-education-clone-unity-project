@@ -23,9 +23,14 @@ public class PlayerCollisions : MonoBehaviour {
         }
         else if (collision.tag == "Coin")
         {
-            Debug.Log("score++");
-            Destroy(collision.gameObject);
+            CollectCoin(collision.gameObject);
         }
-        else Debug.Log(collision.tag);
+        //else Debug.Log(collision.tag);
+    }
+
+    void CollectCoin(GameObject coinObj)
+    {
+        Debug.Log("points++");
+        Destroy(coinObj);
     }
 }
