@@ -14,12 +14,15 @@ public class BackgroundMovement : MonoBehaviour {
 
 	void Update ()
     {
-        this.transform.position = new Vector3(this.transform.position.x - (GameManager.gameSpeed * Time.deltaTime), this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(this.transform.position.x - (GameManager.gameSpeed * Time.smoothDeltaTime), this.transform.position.y, this.transform.position.z);
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "BackgroundBorder") this.transform.position = start;
+        if (collision.tag == "BackgroundBorder")
+        {
+            this.transform.position = start;
+        }
     }
 
 }

@@ -7,17 +7,19 @@ public class CoinMovement : MonoBehaviour {
     [Header("MUST BE SET")]
     public Transform coinTransform;
 
-    //[Header("Coin settings")]
-    //public float speed = 6f;
-
 	void Start ()
     {
 		
 	}
-	
 
 	void Update ()
     {
-        coinTransform.position = new Vector2(coinTransform.position.x - (GameManager.gameSpeed * Time.deltaTime), coinTransform.position.y);
+        coinTransform.position = new Vector2(coinTransform.position.x - (GameManager.gameSpeed * Time.smoothDeltaTime), coinTransform.position.y);
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Border") Destroy(this.gameObject);
+    }
+
 }

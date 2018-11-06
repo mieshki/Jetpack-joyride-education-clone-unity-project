@@ -11,7 +11,6 @@ public class ObstacleSpawner : MonoBehaviour {
     [Header("Obstacles spawner settings")]
     public float startSpawningFor = 1f;
     public float timeBetweenSpawn = 1f;
-    public float speedOfSpawning = .5f;
     public float minObstacleLength = 2f;
     public float maxObstacleLength = 5f;
     public float minObstacleRotation = -20f;
@@ -37,7 +36,7 @@ public class ObstacleSpawner : MonoBehaviour {
         }
         else
         {
-            currentTime -= speedOfSpawning * Time.deltaTime;
+            currentTime -= Time.deltaTime;
         }
 	}
 

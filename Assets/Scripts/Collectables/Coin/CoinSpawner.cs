@@ -5,21 +5,20 @@ using UnityEngine;
 public class CoinSpawner : MonoBehaviour {
 
     [Header("MUST BE SET")]
-    public GameObject coinsSpawnPointsParent;
-    public GameObject coinPrefab;
+    public List<GameObject> allCoinsPatterns;
 
     [Header("Coins spawner settings")]
     public float startSpawningFor = 1f;
-    public float timeBetweenSpawn = 1f;
-    public float speedOfSpawning = 2f;
+    public float timeBetweenSpawn = 5f;
 
     private Transform[] allSpawnPoints;
+    
+
     private float currentTime;
 
     void Start ()
     {
         currentTime = startSpawningFor;
-        allSpawnPoints = coinsSpawnPointsParent.GetComponentsInChildren<Transform>();
     }
 
 	void Update ()
@@ -27,21 +26,21 @@ public class CoinSpawner : MonoBehaviour {
         if (currentTime <= 0)
         {
             //Debug.Log("spawn");
-            SpawnCoin();
+            SpawnRandomCoinsPattern();
             currentTime = timeBetweenSpawn;
         }
         else
         {
-            currentTime -= speedOfSpawning * Time.deltaTime;
+            currentTime -= Time.deltaTime;
         }
     }
 
-    void SpawnCoin()
+    void SpawnRandomCoinsPattern()
     {
-        int randomSpawnPoint = Random.Range(0, allSpawnPoints.Length);
-
-        /*GameObject tempGO = */Instantiate(coinPrefab, allSpawnPoints[randomSpawnPoint]);
-
+        int randomPattern = Random.Range(0, allCoinsPatterns.Count);
+        float randomHeight = Random.Range(-2, 2);
+        Vector3 pos = new Vector3(0, randomHeight, 0);
+        Instantiate(allCoinsPatterns[randomPattern], pos, Quaternion.identity);
     }
 
 }
