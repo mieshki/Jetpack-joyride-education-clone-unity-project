@@ -16,8 +16,8 @@ public class ObstacleMovement : MonoBehaviour {
         obstacleTransform.position = new Vector2(obstacleTransform.position.x - (GameManager.gameSpeed * Time.smoothDeltaTime), obstacleTransform.position.y);
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnBecameInvisible()
     {
-        if (collision.tag == "Border") Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 }

@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4529573614544242}
+  - component: {fileID: 114981843647680068}
   m_Layer: 0
   m_Name: CoinsPattern02
   m_TagString: Untagged
@@ -1239,6 +1240,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinTransform: {fileID: 4664515468310942}
+--- !u!114 &114981843647680068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474665256183630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7127f1536ba989d40918fe02a2986c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212111538988029646
 SpriteRenderer:
   m_ObjectHideFlags: 1

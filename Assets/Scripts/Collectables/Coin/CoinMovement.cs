@@ -17,9 +17,8 @@ public class CoinMovement : MonoBehaviour {
         coinTransform.position = new Vector2(coinTransform.position.x - (GameManager.gameSpeed * Time.smoothDeltaTime), coinTransform.position.y);
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnBecameInvisible()
     {
-        if (collision.tag == "Border") Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
-
 }
