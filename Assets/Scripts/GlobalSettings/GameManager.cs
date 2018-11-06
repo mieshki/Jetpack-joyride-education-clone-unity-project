@@ -14,7 +14,13 @@ public class GameManager : MonoBehaviour {
     private float meters = 0;
     public static int coins = 0;
 
-	void Start ()
+    private void Awake() // on scene reload
+    {
+        meters = 0;
+        coins = 0;
+    }
+
+    void Start ()
     {
 		
 	}
