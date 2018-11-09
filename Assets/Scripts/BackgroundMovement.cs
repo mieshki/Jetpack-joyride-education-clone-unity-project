@@ -14,15 +14,17 @@ public class BackgroundMovement : MonoBehaviour {
 
 	void Update ()
     {
-        this.transform.position = new Vector3(this.transform.position.x - (GameManager.gameSpeed * Time.smoothDeltaTime), this.transform.position.y, this.transform.position.z);
+        transform.position = new Vector3(transform.position.x - (GameManager.gameSpeed * Time.smoothDeltaTime), transform.position.y, transform.position.z);
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnBecameInvisible()
     {
-        if (collision.tag == "BackgroundBorder")
-        {
-            this.transform.position = start;
-        }
+        transform.SetAsFirstSibling();
+        Transform otherBackground = transform.parent.GetChild(1);
+        SpriteRenderer otherBackroundRender = otherBackground.GetComponent<SpriteRenderer>();
+        //Debug on actual backgound size
+        //Debug.Log(otherBackgroundRender.bounds.size.x);
+        transform.position = new Vector3(otherBackground.transform.position.x + otherBackroundRender.bounds.size.x, transform.position.y, transform.position.z);
     }
 
 }
