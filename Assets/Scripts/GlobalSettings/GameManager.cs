@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public static float gameSpeed = 8f;
-    private float defaultGameSpeed = gameSpeed;
+    private float defaultGameSpeed = 8f;
 
     [Header("UI Settings")]
     public Text metersText;
