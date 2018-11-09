@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BackgroundMovement : MonoBehaviour {
 
-    Vector3 start = new Vector3(19f, 0, 0);
-
 	void Start ()
     {
 		
@@ -21,10 +19,10 @@ public class BackgroundMovement : MonoBehaviour {
     {
         transform.SetAsFirstSibling();
         Transform otherBackground = transform.parent.GetChild(1);
-        SpriteRenderer otherBackroundRender = otherBackground.GetComponent<SpriteRenderer>();
+        SpriteRenderer otherBackgroundRender = otherBackground.GetComponent<SpriteRenderer>();
         //Debug on actual backgound size
         //Debug.Log(otherBackgroundRender.bounds.size.x);
-        transform.position = new Vector3(otherBackground.transform.position.x + otherBackroundRender.bounds.size.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(otherBackground.transform.position.x + otherBackgroundRender.bounds.size.x, transform.position.y, transform.position.z);
     }
 
 }
