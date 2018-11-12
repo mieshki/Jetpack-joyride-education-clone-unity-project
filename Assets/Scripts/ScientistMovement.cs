@@ -15,7 +15,8 @@ public class ScientistMovement : MonoBehaviour {
     int goRight = 1;
     Vector3 spawnPos;
 
-    void Start() {
+    void Start()
+    {
         movementSpeed = Random.Range(minMovementSpeed, maxMovementSpeed);
 
         int rand = Random.Range(0, 2);
@@ -43,5 +44,6 @@ public class ScientistMovement : MonoBehaviour {
     private void OnBecameInvisible()
     {
         Destroy(this.gameObject);
+        SpawnerManager.scientistAtThisMoment--;
     }
 }

@@ -52,5 +52,4 @@ public class ObstacleSpawner : MonoBehaviour {
         float randomObstacleRotation = Random.Range(minObstacleRotation, maxObstacleRotation);
         tempGO.transform.Rotate(0, 0, randomObstacleRotation);
     }
-
 }

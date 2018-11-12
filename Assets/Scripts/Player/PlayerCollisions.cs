@@ -19,21 +19,16 @@ public class PlayerCollisions : MonoBehaviour {
     {
         if (collision.tag == "Obstacle")
         {
-            Debug.Log("rip");
-            
-            //Destroy(collision.gameObject);
             ReloadScene();
         }
         else if (collision.tag == "Coin")
         {
             CollectCoin(collision.gameObject);
         }
-        //else Debug.Log(collision.tag);
     }
 
     void CollectCoin(GameObject coinObj)
     {
-        Debug.Log("points++");
         GameManager.coins++;
         Destroy(coinObj);
     }

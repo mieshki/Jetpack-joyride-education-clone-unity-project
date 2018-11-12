@@ -20,9 +20,6 @@ public class BackgroundMovement : MonoBehaviour {
         transform.SetAsFirstSibling();
         Transform otherBackground = transform.parent.GetChild(1);
         SpriteRenderer otherBackgroundRender = otherBackground.GetComponent<SpriteRenderer>();
-        //Debug on actual backgound size
-        //Debug.Log(otherBackgroundRender.bounds.size.x);
         transform.position = new Vector3(otherBackground.transform.position.x + otherBackgroundRender.bounds.size.x, transform.position.y, transform.position.z);
     }
-
 }

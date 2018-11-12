@@ -19,6 +19,8 @@ public class SpawnerManager : MonoBehaviour {
 
     [Header("Scientists")]
     public GameObject scientistPrefab;
+    public int scientistAtTheSameTimeLimit = 3;
+    public static int scientistAtThisMoment = 0;
 
     void Start ()
     {
@@ -44,7 +46,8 @@ public class SpawnerManager : MonoBehaviour {
                 currentTime = 2 * (timeBetweenSpawning - (GameManager.gameSpeed * 0.05f)); 
             } 
         }
-        else currentTime -= Time.deltaTime;
+        else
+            currentTime -= Time.deltaTime;
     }
 
     void SpawnObstacle()
@@ -103,6 +106,10 @@ public class SpawnerManager : MonoBehaviour {
 
     void SpawnScientist()
     {
-        Instantiate(scientistPrefab);
+        if (scientistAtThisMoment < scientistAtTheSameTimeLimit)
+        {
+            Instantiate(scientistPrefab);
+            scientistAtThisMoment++;
+        }
     }
 }

@@ -18,13 +18,13 @@ public class PlayerMovement : MonoBehaviour {
         playerRB.AddForce(Vector2.up * Time.deltaTime * forceMultiplier);
     }
 
-    void Start () {
+    void Start ()
+    {
 		
 	}
 	
-	void Update () {
-        
+	void Update ()
+    {
         if (Input.GetKey("w")) MoveUp();
-
 	}
 }

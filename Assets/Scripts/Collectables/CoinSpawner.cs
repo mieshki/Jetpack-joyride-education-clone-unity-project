@@ -25,14 +25,11 @@ public class CoinSpawner : MonoBehaviour {
     {
         if (currentTime <= 0)
         {
-            //Debug.Log("spawn");
             SpawnRandomCoinsPattern();
             currentTime = timeBetweenSpawn;
         }
         else
-        {
             currentTime -= Time.deltaTime;
-        }
     }
 
     void SpawnRandomCoinsPattern()
@@ -42,5 +39,4 @@ public class CoinSpawner : MonoBehaviour {
         Vector3 pos = new Vector3(0, randomHeight, 0);
         Instantiate(allCoinsPatterns[randomPattern], pos, Quaternion.identity);
     }
-
 }
